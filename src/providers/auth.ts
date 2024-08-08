@@ -1,6 +1,6 @@
 import type { AuthProvider } from "@refinedev/core";
 
-import type { User } from "@/graphql/schema.types";
+// import type { User } from "@/graphql/schema.types";
 
 import { API_URL, dataProvider } from "./data";
 
@@ -8,7 +8,7 @@ import { API_URL, dataProvider } from "./data";
  * For demo purposes and to make it easier to test the app, you can use the following credentials:
  */
 export const authCredentials = {
-  email: "michael.scott@dundermifflin.com",
+  email: "khushicshsr2003@gmail.com",
   password: "demodemo",
 };
 
@@ -96,38 +96,38 @@ export const authProvider: AuthProvider = {
       };
     }
   },
-  getIdentity: async () => {
-    const accessToken = localStorage.getItem("access_token");
+//   getIdentity: async () => {
+//     const accessToken = localStorage.getItem("access_token");
 
-    try {
-      const { data } = await dataProvider.custom<{ me: User }>({
-        url: API_URL,
-        method: "post",
-        headers: accessToken
-          ? {
-              Authorization: `Bearer ${accessToken}`,
-            }
-          : {},
-        meta: {
-          rawQuery: `
-                    query Me {
-                        me {
-                            id,
-                            name,
-                            email,
-                            phone,
-                            jobTitle,
-                            timezone
-                            avatarUrl
-                        }
-                      }
-                `,
-        },
-      });
+//     try {
+//       const { data } = await dataProvider.custom<{ me: User }>({
+//         url: API_URL,
+//         method: "post",
+//         headers: accessToken
+//           ? {
+//               Authorization: `Bearer ${accessToken}`,
+//             }
+//           : {},
+//         meta: {
+//           rawQuery: `
+//                     query Me {
+//                         me {
+//                             id,
+//                             name,
+//                             email,
+//                             phone,
+//                             jobTitle,
+//                             timezone
+//                             avatarUrl
+//                         }
+//                       }
+//                 `,
+//         },
+//       });
 
-      return data.me;
-    } catch (error) {
-      return undefined;
-    }
-  },
+//       return data.me;
+//     } catch (error) {
+//       return undefined;
+//     }
+//   },
 };

@@ -4,15 +4,15 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import { useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
-import {authProvider, dataProvider,liveProvider} from "./providers";
-import {Home, ForgotPassword, Login, Register} from "./pages";
+import {dataProvider,liveProvider} from "./providers";
 import routerBindings, {
   DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import { App as AntdApp } from "antd";
-// import { createClient } from "graphql-ws";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { authProvider } from "./providers/auth";
+import { ForgotPassword, Home, Login, Register } from "./pages";
 
 // import { ColorModeContextProvider } from "./contexts/color-mode";
 
