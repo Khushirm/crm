@@ -5,11 +5,14 @@ import { useGetIdentity } from "@refinedev/core";
 import { SettingOutlined } from "@ant-design/icons";
 import { Button, Popover } from "antd";
 
-import type { User } from "@/graphql/schema.types";
+// import type { User } from "@/graphql/schema.types";
 
-import { CustomAvatar } from "../../custom-avatar";
+// import { CustomAvatar } from "../../custom-avatar";
 import { Text } from "../../text";
+// import { AccountSettings } from "../account-settings";
+import { CustomAvatar } from "../../custom-avatar";
 import { AccountSettings } from "../account-settings";
+import { User } from "../../../graphql/schema.types";
 
 export const CurrentUser = () => {
   const [opened, setOpened] = React.useState(false);
@@ -41,7 +44,6 @@ export const CurrentUser = () => {
       >
         <Button
           style={{ textAlign: "left" }}
-          // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
           icon={<SettingOutlined />}
           type="text"
           block
